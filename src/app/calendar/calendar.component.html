@@ -1,0 +1,10 @@
+<div class="calendar">
+  <div class="calendar__overview">
+    <div class="calendar__overview__item calendar__overview__item--active" *ngFor="let day of dayRoutes" [routerLink]="day.route.path">
+      <h4>{{day.name}}</h4>
+    </div>
+  </div>
+  <div class="calendar__detail">
+    <router-outlet></router-outlet>
+  </div>
+</div>

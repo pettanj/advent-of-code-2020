@@ -1,0 +1,37 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__overview {
+    display: flex;
+    border: 2px solid black;
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    &__item {
+      h4 {
+        margin: 0;
+      }
+      border: 1px solid rgb(206, 206, 206);
+      box-shadow: 2px 1px rgba(206, 206, 206, .5);
+      margin-left: .5rem;
+      margin-right: .5rem;
+      border-collapse: collapse;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 1rem;
+      &--active {
+        cursor: pointer;
+      }
+    }
+  }
+  &__detail {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 2px solid black;
+  }
+
+}

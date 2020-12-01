@@ -1,0 +1,14 @@
+<div>
+  <h3>
+    {{name}}
+  </h3>
+  <button (click)="calculate()">
+    Calculate result
+  </button>
+  <div *ngIf="result?.first?.value || result?.second?.value">
+    <b>Result 1: </b> {{result.first.value || ' - '}} ({{result.first.time}}ms) <br />
+    {{result.first.extraInfo}} <br />
+    <b>Result 2: </b> {{result.second.value || ' - '}} ({{result.second.time}}ms) <br />
+    {{result.second.extraInfo}} <br />
+  </div>
+</div>
