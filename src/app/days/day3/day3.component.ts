@@ -43,7 +43,6 @@ export class Day3Component extends DayBaseComponent implements OnInit {
   part1(): void {
     const start = new Date();
     const puzzle = _.cloneDeep(this.puzzle);
-
     const result: ResultItem = { value: this.parse(puzzle, { x: 0, y: 0 }, { down: 1, right: 3 }), time: 0 };
     result.time = (new Date().getTime() - start.getTime());
     this.result.first = result;
@@ -67,16 +66,19 @@ export class Day3Component extends DayBaseComponent implements OnInit {
   part2(): void {
     const start = new Date();
     const puzzle = _.cloneDeep(this.puzzle);
+    const treeCounts: number[] = [
+      this.parse(puzzle, { x: 0, y: 0 }, { right: 1, down: 1 }),
+      this.parse(puzzle, { x: 0, y: 0 }, { right: 3, down: 1 }),
+      this.parse(puzzle, { x: 0, y: 0 }, { right: 5, down: 1 }),
+      this.parse(puzzle, { x: 0, y: 0 }, { right: 7, down: 1 }),
+      this.parse(puzzle, { x: 0, y: 0 }, { right: 1, down: 2 }),
+    ];
 
-    const slope1 = this.parse(puzzle, { x: 0, y: 0 }, { right: 1, down: 1 });
-    const slope2 = this.parse(puzzle, { x: 0, y: 0 }, { right: 3, down: 1 });
-    const slope3 = this.parse(puzzle, { x: 0, y: 0 }, { right: 5, down: 1 });
-    const slope4 = this.parse(puzzle, { x: 0, y: 0 }, { right: 7, down: 1 });
-    const slope5 = this.parse(puzzle, { x: 0, y: 0 }, { right: 1, down: 2 });
-    const result: ResultItem = { 
-      value: slope1 * slope2 * slope3 * slope4 * slope5,
+    const count = treeCounts.reduce((a, b) => a * b);
+    const result: ResultItem = {
+      value: count,
       time: 0,
-      extraInfo: [slope1, slope2, slope3, slope4, slope5].join(', ')
+      extraInfo: treeCounts.join(', ')
     };
     result.time = (new Date().getTime() - start.getTime());
     this.result.second = result;
