@@ -1,0 +1,17 @@
+@import './colors.scss';
+
+.btn {
+  border-radius: 2px;
+  background-color: white;
+  border-color: black;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  &-green {
+    background-color: $green;
+    color: white;
+    &:hover {
+      background-color: lighten($green, 5%);
+      color: darken(white, 5%);
+    }
+  }
+}

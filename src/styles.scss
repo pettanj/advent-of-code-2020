@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/modules/buttons.scss';
+@import 'assets/styles/modules/colors.scss';
+@import 'assets/styles/modules/borders.scss';
+
+body {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(220, 220, 220);
+  margin: 0 auto;
+}

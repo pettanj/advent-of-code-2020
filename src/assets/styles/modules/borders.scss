@@ -1,0 +1,16 @@
+.border {
+  &-bottom {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    &-thin {
+      border-bottom-width: 1px;
+      &-gray {
+        border-bottom-color: $gray;
+      }
+    }
+    &-gray {
+      border-bottom-color: $gray;
+    }
+  }
+}

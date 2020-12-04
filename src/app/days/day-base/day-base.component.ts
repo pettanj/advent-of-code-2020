@@ -31,12 +31,13 @@ export class DayBaseComponent implements OnInit {
       time: 0
     }
   };
-
+  loading = false;
   ngOnInit(): void {
     this.puzzle = this.formatInput(this.input);
   }
   formatInput(input: string): any {}
   calculate(): void {
+    this.loading = true;
     this.clear();
     if (typeof this.part1 === 'function') {
       this.part1();
@@ -44,6 +45,7 @@ export class DayBaseComponent implements OnInit {
     if (typeof this.part2 === 'function') {
       this.part2();
     }
+    this.loading = false;
   }
   part1(): void {}
   part2(): void {}
