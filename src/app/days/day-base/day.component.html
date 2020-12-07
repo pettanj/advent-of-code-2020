@@ -11,11 +11,11 @@
   <ng-template #loaded>
     <div class="result" *ngIf="result?.first?.value !== null || result?.second?.value !== null">
       <div>
-        <b>Result 1: </b> {{result.first.value || ' - '}} ({{result.first.time}}ms) <br />
+        <b>Result 1: </b> {{result.first.value != null ? result.first.value : ' - '}} ({{result.first.time}}ms) <br />
         {{result.first.extraInfo}} <br />
       </div>
       <div>
-        <b>Result 2: </b> {{result.second.value || ' - '}} ({{result.second.time}}ms) <br />
+        <b>Result 2: </b> {{result.second.value != null ? result.second.value : ' - '}} ({{result.second.time}}ms) <br />
         {{result.second.extraInfo}} <br />
       </div>
     </div>
