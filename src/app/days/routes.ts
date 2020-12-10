@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { Day1Component } from './day1/day1.component';
+import { Day10Component } from './day10/day10.component';
 import { Day2Component } from './day2/day2.component';
 import { Day3Component } from './day3/day3.component';
 import { Day4Component } from './day4/day4.component';
@@ -19,4 +20,5 @@ export const dayRoutes: Routes = [
   {path: 'day-7', component: Day7Component},
   {path: 'day-8', component: Day8Component},
   {path: 'day-9', component: Day9Component},
+  {path: 'day-10', component: Day10Component},
 ];

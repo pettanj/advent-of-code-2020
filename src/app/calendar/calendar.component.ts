@@ -15,10 +15,10 @@ interface Day {
 export class CalendarComponent implements OnInit {
 
   constructor() {
-    this.dayRoutes = dayRoutes.map(r => {
+    this.dayRoutes = dayRoutes.map((r, index) => {
       return {
         route: r,
-        name: r.path?.split('').pop()
+        name: (index + 1).toString()
       };
     });
   }
